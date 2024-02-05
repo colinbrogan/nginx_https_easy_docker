@@ -5,7 +5,11 @@ Docker is supposed to make server deployment easy, but without the right recipe,
 ```
 git clone https://github.com/colinbrogan/nginx_https_easy_docker
 ```
-Change DOMAIN in the .env file to your domain. 
+Put your domain in the .env file
+
+```
+DOMAIN=mydomain.com
+```
 
 ### Setup a docker node with a hosting provider
 - [DigitalOcean](hosting_providers/digitalocean.md)
