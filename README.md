@@ -8,8 +8,8 @@ git clone https://github.com/colinbrogan/nginx_https_easy_docker
 Change DOMAIN in the .env file to your domain. 
 
 ### Setup a docker node with a hosting provider
-[DigitalOcean](hosting_providers/digitalocean.md)
-
+- [DigitalOcean](hosting_providers/digitalocean.md)
+- More to come (DM me if you've got directions for other providers)
 
 #### Deploy!
 ```
