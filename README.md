@@ -27,10 +27,10 @@ docker compose up --build -d
 Watch your domain magically become HTTPS, and worry not about renewals. You may add your app's NGINX configuration in `dockerdata/nginx/cert.conf`.
 
 
-## Why?
+## Why do I need your stupid docker compose setup?
 While docker in theory simplifies server setup and management, in practice it's seperation of services can make Let's Encrypt + Nginx configuration complex. Getting docker to create the certificate AND configure NGINX is one thing. To then have it autorenew (so your clients' website doesn't go down in 3 months) is quite another accomplishment. Docker is designed for each service to run a single primary process, so we have to come up with entrypoints to coordinate the two services (nginx and certbot), waiting for eachother to perform particular tasks before progressing to final stages. Luckily, you don't have to worry about any of this because it's all done under the hood for you.
 
-## How?
+## How does it work under the hood?
 We have two seperate configurations files for NGINX: `dockerdata/nginx/precert.conf`, and `dockerdata/nginx/cert.conf`. The first (precert.conf) is only the configuration needed to run NGINX on port 80, so that cerbot can perform it's acme challenge. We then switch to the full configuration of NGINX (cert.conf), including the https certificate after certbot has done it's thing.
 
 Observe the entrypoint for the nginx service here [dockerdata/nginx/cert-entrypoint.sh](dockerdata/nginx/cert-entrypoint.sh). We first overwrite both configuration files with the domain you've entered in .env. We then run an infinite while loop in the background, which checks if the cert files exist every 10 seconds, before moving to the primary process running nginx (which at this point will be running precert.conf). This gets us up on port 80, waiting for the certbot service to do it's acme test. As soon as the file check finds the certificate files, we switch the nginx configuration file to cert.conf, and reload nginx. This gives us the full configuration of NGINX, including the https certificates and other recommended settings. We now switch the while loop wait time to 6 hours, since we now only need to reload nginx when certbot renews the certificate.
