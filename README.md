@@ -15,7 +15,10 @@ DOMAIN=mydomain.com
 - [DigitalOcean](hosting_providers/digitalocean.md)
 - More to come (DM me if you've got directions for other providers)
 
-#### Deploy!
+### Point your domain nameservers to the docker node
+(If you haven't already)
+
+### Deploy!
 ```
 docker compose up --build -d
 ```
