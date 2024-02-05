@@ -1,5 +1,5 @@
 # Docker Compose NGINX with self-renewing Let's Encrypt HTTPS Easy
-Docker is supposed to make server deployment easy, but without the right recipe, some things may become much harder. Running an NGINX server with HTTPS via Let's Encrypt, along with auto-renewal, was one such SNAFU. Having found existing recipes on the internet for this unnecessarily complex or unreliable, the solution given here is designed to have you up and running fast.
+Docker is supposed to make server deployment easy, but without the right recipe, some things may become much harder. Running an NGINX server with HTTPS via Let's Encrypt, along with auto-renewal, was one such SNAFU. Having found existing recipes on the internet for this unnecessarily complex or unreliable, I am sharing my solution designed to eliminate headaches associated with this.
 
 ## Enough talk. Let's go!
 ```
@@ -8,7 +8,7 @@ git clone https://github.com/colinbrogan/nginx_https_easy_docker
 Change DOMAIN in the .env file to your domain. 
 
 ### Setup a docker node with a hosting provider
-    [DigitalOcean](hosting_providers/digitalocean.md)
+[DigitalOcean](hosting_providers/digitalocean.md)
 
 
 #### Deploy!
