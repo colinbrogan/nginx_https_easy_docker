@@ -1,0 +1,36 @@
+# NGINX and https using this example:
+# https://pentacent.medium.com/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71
+
+version: '3'
+services:
+  nginx:
+    build:
+      context: ./dockerdata/nginx/
+      dockerfile: ./Dockerfile.nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - DOMAIN
+    volumes:
+      - ./dockerdata/nginx:/etc/nginx/conf.d
+      - ./dockerdata/nginx/conf:/etc/letsencrypt
+      - ./dockerdata/certbot/www:/var/www/certbot
+
+  certbot:
+    build: 
+      context: ./dockerdata/certbot/
+      dockerfile: ./Dockerfile.certbot
+    #entrypoint: ["echo", "Service certbot disabled"]
+
+    environment:
+      - DOMAIN
+    depends_on:
+      - nginx
+    volumes:
+      - ./dockerdata/nginx/conf:/etc/letsencrypt
+      - ./dockerdata/certbot/www:/var/www/certbot
+      - ./dockerdata/certbot/log:/var/log/letsencrypt
+
+
+ 

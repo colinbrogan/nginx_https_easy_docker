@@ -1,0 +1,17 @@
+FROM nginx:1.15-alpine
+RUN apk add --no-cache bash
+
+COPY precert.conf /tmp/docker.nginx
+COPY cert.conf /tmp/docker.nginx.switch_me
+
+RUN mkdir -p /etc/letsencrypt/nginx_config
+COPY conf/options-ssl-nginx.conf /etc/nginx/.
+COPY conf/ssl-dhparams.pem /etc/nginx/.
+
+EXPOSE 80 443
+
+ADD cert-entrypoint.sh /etc/nginx/.
+
+RUN chmod +x /etc/nginx/cert-entrypoint.sh
+
+CMD ["/etc/nginx/cert-entrypoint.sh"]
