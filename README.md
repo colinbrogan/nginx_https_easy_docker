@@ -1,6 +1,5 @@
 # Running NGINX with HTTPS (via Let's Encrypt) on Docker
-Docker is supposed to make server deployment easy, but without the right recipe, some things may become much harder. Running an NGINX server with HTTPS via Let's Encrypt (replete with auto-renewals) was fairly straightforward in the past, but on Docker, its a real SNAFU. Having found existing recipes on the internet for this unnecessarily complex or unreliable, I am sharing my solution designed to eliminate headaches associated with this.
-
+Docker is supposed to make server deployment easy, but without the right recipe, some things may become much harder. Running an NGINX server with HTTPS via Let's Encrypt (replete with auto-renewals) was fairly straightforward in the past, but on Docker, its a real SNAFU. Having found existing recipes on the internet for this unnecessarily complex or unreliable, I am sharing my solution to help others avoid the same head-aches I faced.
 ## Enough talk. Let's go!
 ```
 git clone https://github.com/colinbrogan/nginx_https_easy_docker
