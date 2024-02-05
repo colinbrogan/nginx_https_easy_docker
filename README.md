@@ -26,7 +26,7 @@ docker compose up --build -d
 Watch your domain magically become HTTPS, and worry not about renewals. You may add your app's NGINX configuration in `dockerdata/nginx/cert.conf`.
 
 
-## Why would I even need this?
+## Why is all this config even necessary?
 While docker in theory simplifies server setup and management, in practice it's seperation of services can make Let's Encrypt + Nginx configuration complex. Getting docker to create the certificate AND configure NGINX is one thing. To then have it autorenew (so your clients' website doesn't go down in 3 months) is quite another accomplishment. Docker is designed for each service to run a single primary process, so we have to come up with entrypoints to coordinate the two services (nginx and certbot), waiting for eachother to perform particular tasks before progressing to final stages. Luckily, you don't have to worry about any of this because it's all done under the hood for you.
 
 ## How does it work under the hood?
