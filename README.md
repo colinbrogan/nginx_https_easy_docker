@@ -16,7 +16,7 @@ Directions for 1-click solutions by major hosting providers are linked to below.
 - More to come (DM me if you've got directions for other providers)
 
 ### Point your domain nameservers to the docker node
-(If you haven't already)
+Do I really have to explain this?
 
 ### Deploy!
 ```
