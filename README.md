@@ -11,7 +11,7 @@ DOMAIN=mydomain.com
 ```
 
 ### Setup a docker node with a hosting provider
-Directions for 1-click solutions by major hosting providers are linked to below. If you have a different hosting provider or want to self-host, follow the [Official Docker Install Instructions](https://docs.docker.com/engine/install/ubuntu/). Make sure port 80 and 443 are open on the node. You can use the DigitalOcean instructions below for reference if your node is also setup on ubuntu.
+Directions for 1-click solutions by major hosting providers are linked to below. If you have a different hosting provider or want to self-host, follow the [Official Docker Install Instructions](https://docs.docker.com/engine/install/ubuntu/). Make sure port 80 and 443 are open on the node. You can use the DigitalOcean instructions below for reference if your node is ubuntu.
 - [DigitalOcean](hosting_providers/digitalocean.md)
 - More to come (DM me if you've got directions for other providers)
 
