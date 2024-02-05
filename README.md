@@ -12,6 +12,7 @@ DOMAIN=mydomain.com
 ```
 
 ### Setup a docker node with a hosting provider
+Directions for 1-click solutions by major hosting providers are linked to below. In general, any virtual machine setup according to [Official Docker Install Instructions](https://docs.docker.com/engine/install/ubuntu/) should work. Make sure to open up port 80 and 443 on your firewall. How to do this is shown in the digitalocean link
 - [DigitalOcean](hosting_providers/digitalocean.md)
 - More to come (DM me if you've got directions for other providers)
 
