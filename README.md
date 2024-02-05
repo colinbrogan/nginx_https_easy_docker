@@ -24,7 +24,7 @@ Directions for 1-click solutions by major hosting providers are linked to below.
 docker compose up --build -d
 ```
 
-Watch your domain magically become HTTPS, and worry not about renewals. You may add your app's NGINX configuration in `nginx/cert.conf`.
+Watch your domain magically become HTTPS, and worry not about renewals. You may add your app's NGINX configuration in `dockerdata/nginx/cert.conf`.
 
 
 ## Why?
